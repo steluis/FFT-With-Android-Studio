@@ -36,3 +36,7 @@ The thread writeAudioDataToFile() is launched.
 This is an indipendent thread. Core of this function is the loop while(isRecording) which remains active until Stop button in pressed.
 Recorded audio data are transferred to the buffer data[]. The size of this buffer is the variable bufferSize that is calculated in relation to PCM sample rate and is equal to 21504. Inside while() cycle, FFT is calculated and the absolute values of the FFT are stored in the array absNormalizedSignal[]. The size of this array is defined by the variable mNumberOfFFTPoints that I fixed to 8192 (must be a multiple of 2) so as you can see it has nothing to do with bufferSize.
 Every time a new set of data is read and FFT calculated, function AggiornaGrafico() is called to refresh the graph in the display with the new data.
+
+<B>SAMPLE VIDEO</B>
+You can watch AudioFourier.mp4 video to see the application working. In this test a 10KHz signal was generated while additional ambient noise was present. 
+It is clearly visible the peak at 10KHz and the noise at lower frequencies.
